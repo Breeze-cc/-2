@@ -10,12 +10,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>万家乐OCP管理系统</title>
-    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/5.13.0/css/all.css">
+    <%--<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/5.13.0/css/all.css">--%>
     <%--<link rel="stylesheet" href="./login.css">--%>
     <style>
 
         body{
-            background-image:url('http://inews.gtimg.com/newsapp_ls/0/11535311052/0');
+            background-image:url('0.jpg');
             background-size: cover;
             background-repeat: no-repeat;
         }
@@ -91,7 +91,7 @@
 </body>
 <script>
     function login(){
-        window.location.href="${path }/paper/allPaper";
+        window.location.href="${path }/customer/allCustomer";
     }
 </script>
 </html>

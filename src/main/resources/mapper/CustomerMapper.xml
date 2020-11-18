@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.CustomerDao">
+    <resultMap type="Customer" id="customerResultMap" >
+        <id property="customerId" column="customer_id"/>
+        <result property="customerName" column="name"/>
+        <result property="customerNum" column="number"/>
+        <result property="customerDetail" column="detail"/>
+    </resultMap>
+    <insert id="addCustomer" parameterType="Customer">
+        INSERT INTO customer(customer_id,name,number,detail) VALUE (#{customerId},#{customerName}, #{customerNum}, #{customerDetail})
+    </insert>
+
+    <delete id="deleteCustomerById" parameterType="long">
+        DELETE FROM customer WHERE customer_id=#{customerID}
+    </delete>
+
+    <update id="updateCustomer" parameterType="Customer">
+        UPDATE customer
+        SET NAME = #{customerName},NUMBER = #{customerNum},detail = #{customerDetail}
+        WHERE  customer_id = #{customerId}
+    </update>
+
+    <select id="queryById" resultType="Customer" parameterType="long">
+        SELECT customer_id,name,number,detail
+        FROM customer
+        WHERE customer_id=#{customerId}
+    </select>
+    <select id="queryAllCustomer" resultMap="customerResultMap">
+        SELECT customer_id,name,number,detail
+        FROM customer
+    </select>
+
+</mapper>
